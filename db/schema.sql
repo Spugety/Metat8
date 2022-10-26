@@ -1,0 +1,3 @@
+DROP DATABASE IF EXISTS metat8_db;
+
+CREATE DATABASE metat8_db;
