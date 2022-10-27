@@ -15,10 +15,18 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static("public"));
 
+const days =require('./models/Days');
+const users=require('./models/Users');
+const sequelize = require('./config/connection');
+
 //Today routes
 app.use('/today', require('./controllers/api/todayRoutes'));
 
-app.listen(PORT, () => {
+sequelize.sync().then(()=>{
+  app.listen(PORT, () => {
     console.log('Server listening on: http://localhost:' + PORT);
   });
+}
+)
+
 
