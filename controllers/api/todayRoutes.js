@@ -18,23 +18,35 @@ router.get('/',(req,res)=>
     .catch(err=>console.log(err)));
 
 // Add a today entry
-router.get('/add',(req,res)=>{
-    const todayData={
-        intention: 'I will succeed, I am enough',
-        mood: 'calm',
-        entry: 'today was very tough.  i had a severe case of analysis paralysis'
+router.post('/add', async (req,res)=>{
+    try {
+        const todayData= await Day.create({...req.body});
+
+        res.status(200).json(todayData)
+         
     }
-    let { intention, mood, entry} =todayData;
+    catch (err){
+        res.status(500).json(err)
+      
+    }
+});
+
+    // const todayData={
+    //     intention: 'I will succeed, I am enough',
+    //     mood: 'calm',
+    //     entry: 'today was very tough.  i had a severe case of analysis paralysis'
+    // }
+    // let { intention, mood, entry} =todayData;
 
 // Insert into table
-Day.create({
-    intention,
-    mood,
-    entry
-})
-.then(entry => res.redirect('/today'))
-.catch(err=> console.log(err));
-});
+// Day.create({
+//     intention,
+//     mood,
+//     entry
+// })
+// .then(entry => res.redirect('/today'))
+// .catch(err=> console.log(err));
+// });
 
 
 

@@ -5,7 +5,7 @@ router.get('/', async (req,res)=>{
     res.json('Test User Route');
     try{
         const userData= await User.findAll({
-            include: [{ models: Days}]
+            include: [{ models: Day}]
             
         });
         console.log(userData);

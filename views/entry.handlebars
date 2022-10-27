@@ -1,8 +1,11 @@
+
+
+
 <div class="row">
 <div class="col-auto">
-    <h2>Welcome, {{username}}!</h2>
 </div>
 </div>
 <div class=" col-auto">
-    <h3> {{<format_date date_created}} Journay Entry {{entry}}</h3>
+    <p> {{intention}}</p>
+    <h3> Journay Entry {{#each entry as |entry| }}</h3>
     </div>
