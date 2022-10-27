@@ -41,7 +41,7 @@ header::before {
     top: 0;
     display: block;
     display: factor;
-    background-image: url(./media/relaxTree.jpg);
+    background-image: url(../../media/relaxTree.jpg);
     background-size: contain;
     transform-origin: center center 0;
     transform: translateZ(-1px) scale(2);
