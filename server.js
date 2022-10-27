@@ -7,7 +7,6 @@ const app = express();
 const hbs = exphbs.create({});
 const PORT = process.env.PORT || 9999;
 
-//Handlebars
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
 
@@ -26,7 +25,6 @@ sequelize.sync().then(()=>{
   app.listen(PORT, () => {
     console.log('Server listening on: http://localhost:' + PORT);
   });
-}
-)
+});
 
 
