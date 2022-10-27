@@ -7,17 +7,6 @@ const app = express();
 const hbs = exphbs.create({});
 const PORT = process.env.PORT || 9999;
 
-const sess = {
-    secret: 'Super secret secret',
-    cookie: {},
-    resave: false,
-    saveUninitialized: true,
-    store: new SequelizeStore({
-      db: sequelize
-    })
-  };
-app.use(session(sess));
-
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
 
@@ -25,7 +14,17 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static("public"));
 
-app.listen(PORT, () => {
+const days =require('./models/Days');
+const users=require('./models/Users');
+const sequelize = require('./config/connection');
+
+//Today routes
+app.use('/today', require('./controllers/api/todayRoutes'));
+
+sequelize.sync().then(()=>{
+  app.listen(PORT, () => {
     console.log('Server listening on: http://localhost:' + PORT);
+  });
 });
+
 
