@@ -2,7 +2,7 @@ const { Model, DataTypes } = require('sequelize');
 const sequelize= require('../config/connection');
 
 
-class Day extends Model{}
+class Day extends Model {}
 
 Day.init(
     {
@@ -33,7 +33,7 @@ Day.init(
         timestamps: true,
         freezeTableName: true,
         underscored: true,
-        modelName: 'user',
+        modelName: 'day',
     }
     ),
     module.exports=Day;
