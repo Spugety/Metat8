@@ -1,19 +1,19 @@
-const router= require('express').Router();
-const User= require('../../models');
+const router = require('express').Router();
+const User = require('../../models');
 
-router.get('/', async (req,res)=>{
+router.get('/', async (req, res) => {
     res.json('Test User Route');
-    try{
-        const userData= await User.findAll({
-            include: [{ models: Day}]
-            
+    try {
+        const userData = await User.findAll({
+            include: [{ models: Day }]
+
         });
         console.log(userData);
         res.status(200).json(userData);
     } catch (err) {
         console.log(err);
         res.status(500).json(err);
-      }
+    }
 });
 
 router.post('/', async (req, res) => {
@@ -22,7 +22,7 @@ router.post('/', async (req, res) => {
             username: req.body.username,
             email: req.body.email,
             password: req.body.password,
-         });
+        });
 
         res.status(200).json(userData)
 
@@ -35,4 +35,4 @@ router.post('/', async (req, res) => {
     }
 });
 
-module.exports= router;
+module.exports = router;
