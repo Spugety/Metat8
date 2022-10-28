@@ -1,1 +1,2 @@
-// code for entering affirmation and journal entries 
+// code for entering affirmation and journal entries
+
