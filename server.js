@@ -7,6 +7,23 @@ const app = express();
 const hbs = exphbs.create({});
 const PORT = process.env.PORT || 9999;
 
+//creating a session middleware with cookie properties
+const sess= {
+  secret: 'Just breath',
+  cookie: {
+    maxAge: 60 * 60 * 1000,
+    httpOnly: true,
+    secure: false,
+    sameSite: 'strict',
+  },
+  resave: false,
+  saveUninitialized: true,
+  store: new SequelizeStore({
+    db: sequelize,
+  }),
+  };
+app.use(session(sess));
+
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
 
