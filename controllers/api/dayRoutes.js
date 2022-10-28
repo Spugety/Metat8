@@ -1,10 +1,10 @@
 const router = require('express').Router();
 const db = require('../../config/connection');
-const Day = require('../../models');
+const {Day} = require('../../models');
 
-// router.get('/', (req,res)=> res.send('TODAY'));
+// router.get('/', (req,res)=> res.send('Welcome'));
 
-// Get today entry
+// Get days
 
 router.get('/', async (req, res) => {
 
@@ -19,7 +19,7 @@ router.get('/', async (req, res) => {
 });
 
 
-// Add a today entry
+// Add a daily entry
 router.post('/', async (req, res) => {
     try {
         const todayData = await Day.create({ ...req.body });
@@ -28,6 +28,7 @@ router.post('/', async (req, res) => {
 
     }
     catch (err) {
+        console.log(err)
         res.status(500).json(err)
 
     }
