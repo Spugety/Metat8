@@ -43,6 +43,7 @@ header::before {
     display: factor;
     background-image: url(../../media/relaxTree.jpg);
     background-size: contain;
+    background-repeat: no-repeat;
     transform-origin: center center 0;
     transform: translateZ(-1px) scale(2);
     z-index: -1;
@@ -55,4 +56,24 @@ header * {
     text-align: center;
     margin: 0;
     padding: 1em 0;
+}
+
+.calendar_wrapper {
+    align-self: center;
+    width: 300px;
+    height: 500px;
+    background-color: black;
+    border-radius: 20px;
+    margin: 100px;
+}
+.calendar_wrapper header {
+    display: flex;
+    align-items: center;
+}
+
+.calendar ul {
+    display: flex;
+    list-style: none;
+    flex-wrap: wrap;
+
 }
