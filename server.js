@@ -1,7 +1,7 @@
 const express = require('express');
 const session = require('express-session');
+const routes= require('./controllers')
 const exphbs = require('express-handlebars');
-const routes = require('./controllers/api/userRoutes');
 const Sequelize = require('./config/connection');
 const app = express();
 const hbs = exphbs.create({});
@@ -14,14 +14,14 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static("public"));
 
-const days =require('./models/Days');
-const users=require('./models/Users');
+const days =require('./models/Day');
+const users=require('./models/User');
 const sequelize = require('./config/connection');
 
 //Today routes
-app.use('/today', require('./controllers/api/todayRoutes'));
+app.use(routes);
 
-sequelize.sync().then(()=>{
+sequelize.sync({force: true}).then(()=>{
   app.listen(PORT, () => {
     console.log('Server listening on: http://localhost:' + PORT);
   });
