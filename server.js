@@ -18,6 +18,10 @@ const days =require('./models/Day');
 const users=require('./models/User');
 const sequelize = require('./config/connection');
 
+// create a route that listens for a get to '/'
+// -- get any data needed from the db if applicable
+// -- render your 'all' template to the user
+
 //Today routes
 app.use(routes);
 
