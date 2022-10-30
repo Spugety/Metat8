@@ -1,12 +1,12 @@
 const { Model, DataTypes } = require('sequelize');
-const sequelize= require('../config/connection');
+const sequelize = require('../config/connection');
 
 
-class Day extends Model {}
+class Day extends Model { }
 
 Day.init(
     {
-        id:{
+        id: {
             type: DataTypes.INTEGER,
             allowNull: false,
             primaryKey: true,
@@ -15,21 +15,21 @@ Day.init(
         intention: {
             type: DataTypes.STRING,
             allowNull: false,
-           
+
         },
-       mood: {
+        mood: {
             type: DataTypes.STRING,
             allowNull: false,
-            
+
         },
         entry: {
             type: DataTypes.STRING,
             allowNull: false,
-           
+
         },
         userId: {
             type: DataTypes.INTEGER,
-            references: {model: 'user', key: 'id'},
+            references: { model: 'user', key: 'id' },
 
         }
     },
@@ -40,5 +40,5 @@ Day.init(
         underscored: true,
         modelName: 'day',
     }
-    ),
-    module.exports=Day;
+),
+    module.exports = Day;
