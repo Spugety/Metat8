@@ -1,4 +1,6 @@
 <div class="container px-5 my-5">
+  <form id="formData">
+    <div class="row">
         <div class="mb-3">
             <!-- ! Mood choices to select -->
             <form action="/day" method="POST">
@@ -29,14 +31,13 @@
       <textarea class="form-control" id="GoalIntentionAffirmation" type="text"
         placeholder="What Goal, intention, and/or affirmation would you like to set today?" style="height: 10rem;"
         ></textarea>
-      <label for="GoalIntentionAffirmation">What Goal, intention, and/or affirmation would you like to set
-        today?</label>
+      <label for="GoalIntentionAffirmation">Set an intention</label>
     </div>
     {{!-- journal entry --}}
     <div class="form-floating mb-3">
       <textarea class="form-control" id="journalEntry" type="text" placeholder="Journal Entry..." style="height: 10rem;"
         ></textarea>
-      <label for="journalEntry">Journal Entry...</label>
+      <label for="journalEntry">Share your thoughts</label>
     </div>
     <div class="mb-3">
       <label class="form-label d-block">Extra Feelings</label>
@@ -139,9 +140,9 @@
           <div class="d-none" id="submitError">
             <div class="text-center text-danger mb-3"> Error submitting entry!</div>
           </div>
-          <div class="d-grid">
-            <button class="btn btn-primary btn-lg disabled" id="submitButton" type="submit">Submit</button>
+            <button class="btn btn-primary" id="submitButton" type="submit">Submit</button>
+          </div>
+          </form>
           </div>
   </form>
 </div>
-<script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
