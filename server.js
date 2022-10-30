@@ -5,7 +5,11 @@ const exphbs = require('express-handlebars');
 const sequelize = require('./config/connection');
 const SequelizeStore= require('connect-session-sequelize')(session.Store);
 const app = express();
-const hbs = exphbs.create({});
+// const hbs = exphbs.create({defaultLayout: 'main'});
+
+
+const hbs = exphbs.create({ defaultLayout: "",
+layoutsDir: "",})
 const PORT = process.env.PORT || 9999;
 
 //creating a session middleware with cookie properties
@@ -39,7 +43,7 @@ app.use(express.static("public"));
 //Today routes
 app.use(routes);
 
-sequelize.sync({force: true}).then(()=>{
+sequelize.sync({force: false}).then(()=>{
   app.listen(PORT, () => {
     console.log('Server listening on: http://localhost:' + PORT);
   });

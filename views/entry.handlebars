@@ -1,133 +1,145 @@
 <div class="container px-5 my-5">
-<div class="mb-3">
-    {{!-- Mood choices to select --}}
-    <form action="/day" method="POST">
-    <label class="form-label d-block" value={{mood}}>Today's Mood</label>
-    <div class="form-check form-check-inline">
-        <input class="form-check-input" id="great" type="radio" name="todaysMood" data-sb-validations=""/>
-        <label class="form-check-label" for="great">GREAT</label>
+  <form id="entryForm">
+    <div class="mb-3">
+      {{!-- Mood choices to select --}}
+      {{!-- <form action="/day" method="POST"> --}}
+        <label class="form-label d-block">Today's Mood</label>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" id="great" type="radio" name="todaysMood" data-sb-validations="" />
+          <label class="form-check-label" for="great">GREAT</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" id="good" type="radio" name="todaysMood" data-sb-validations="" />
+          <label class="form-check-label" for="good">GOOD</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" id="okay" type="radio" name="todaysMood" data-sb-validations="" />
+          <label class="form-check-label" for="okay">OKAY</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" id="bad" type="radio" name="todaysMood" data-sb-validations="" />
+          <label class="form-check-label" for="bad">BAD</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" id="awful" type="radio" name="todaysMood" data-sb-validations="" />
+          <label class="form-check-label" for="awful">AWFUL</label>
+        </div>
     </div>
-     <div class="form-check form-check-inline">
-        <input class="form-check-input" id="good" type="radio" name="todaysMood" data-sb-validations=""/>
-        <label class="form-check-label" for="good">GOOD</label>
+    {{!--set daily intention --}}
+    <div class="form-floating mb-3">
+      <textarea class="form-control" id="GoalIntentionAffirmation" type="text"
+        placeholder="What Goal, intention, and/or affirmation would you like to set today?" style="height: 10rem;"
+        data-sb-validations=""></textarea>
+      <label for="GoalIntentionAffirmation">What Goal, intention, and/or affirmation would you like to set
+        today?</label>
     </div>
-     <div class="form-check form-check-inline">
-        <input class="form-check-input" id="okay" type="radio" name="todaysMood" data-sb-validations=""/>
-        <label class="form-check-label" for="okay">OKAY</label>
+    {{!-- journal entry --}}
+    <div class="form-floating mb-3">
+      <textarea class="form-control" id="journalEntry" type="text" placeholder="Journal Entry..." style="height: 10rem;"
+        data-sb-validations=""></textarea>
+      <label for="journalEntry">Journal Entry...</label>
     </div>
-     <div class="form-check form-check-inline">
-        <input class="form-check-input" id="bad" type="radio" name="todaysMood" data-sb-validations=""/>
-        <label class="form-check-label" for="bad">BAD</label>
-    </div>
-     <div class="form-check form-check-inline">
-        <input class="form-check-input" id="awful" type="radio" name="todaysMood" data-sb-validations=""/>
-        <label class="form-check-label" for="awful">AWFUL</label>
-    </div>
-</div> 
-{{!--set daily intention  --}}
-<div class="form-floating mb-3">
-    <textarea class="form-control" id="GoalIntentionAffirmation" type="text" placeholder="What Goal, intention, and/or affirmation would you like to set today?" style="height: 10rem;" data-sb-validations="">{{intention}}</textarea>
-    <label for="GoalIntentionAffirmation">What Goal, intention, and/or affirmation would you like to set today?</label>
-</div>
-{{!-- journal entry --}}
-<div class="form-floating mb-3">
-    <textarea class="form-control" id="journalEntry" type="text" placeholder="Journal Entry..." style="height: 10rem;" data-sb-validations="">{{entry}}</textarea>
-    <label for="journalEntry">Journal Entry...</label>
-</div>
-<div class="mb-3">
-    <label class="form-label d-block">Extra Feelings</label>
-    <div class="form-check form-check-inline">
-        <input class="form-check-input" id="happy" type="checkbox" name="extraFeelings" data-sb-validations=""/>
+    <div class="mb-3">
+      <label class="form-label d-block">Extra Feelings</label>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" id="happy" type="checkbox" name="extraFeelings" data-sb-validations="" />
         <label class="form-check-label" for="happy">Happy</label>
-    </div>
+      </div>
       <div class="form-check form-check-inline">
-        <input class="form-check-input" id="excited" type="checkbox" name="extraFeelings" data-sb-validations=""/>
+        <input class="form-check-input" id="excited" type="checkbox" name="extraFeelings" data-sb-validations="" />
         <label class="form-check-label" for="excited">Excited</label>
-    </div>
+      </div>
       <div class="form-check form-check-inline">
-        <input class="form-check-input" id="grateful" type="checkbox" name="extraFeelings" data-sb-validations=""/>
+        <input class="form-check-input" id="grateful" type="checkbox" name="extraFeelings" data-sb-validations="" />
         <label class="form-check-label" for="grateful">Grateful</label>
-    </div>
+      </div>
       <div class="form-check form-check-inline">
-        <input class="form-check-input" id="confident" type="checkbox" name="extraFeelings" data-sb-validations=""/>
+        <input class="form-check-input" id="confident" type="checkbox" name="extraFeelings" data-sb-validations="" />
         <label class="form-check-label" for="confident">Confident</label>
-    </div>
+      </div>
       <div class="form-check form-check-inline">
-        <input class="form-check-input" id="relaxed" type="checkbox" name="extraFeelings" data-sb-validations=""/>
+        <input class="form-check-input" id="relaxed" type="checkbox" name="extraFeelings" data-sb-validations="" />
         <label class="form-check-label" for="relaxed">Relaxed</label>
-    </div>
+      </div>
       <div class="form-check form-check-inline">
-        <input class="form-check-input" id="calm" type="checkbox" name="extraFeelings" data-sb-validations=""/>
+        <input class="form-check-input" id="calm" type="checkbox" name="extraFeelings" data-sb-validations="" />
         <label class="form-check-label" for="calm">Calm</label>
-    </div>
+      </div>
       <div class="form-check form-check-inline">
-        <input class="form-check-input" id="hopeful" type="checkbox" name="extraFeelings" data-sb-validations=""/>
+        <input class="form-check-input" id="hopeful" type="checkbox" name="extraFeelings" data-sb-validations="" />
         <label class="form-check-label" for="hopeful">Hopeful</label>
-    </div>
+      </div>
       <div class="form-check form-check-inline">
-        <input class="form-check-input" id="content" type="checkbox" name="extraFeelings" data-sb-validations=""/>
+        <input class="form-check-input" id="content" type="checkbox" name="extraFeelings" data-sb-validations="" />
         <label class="form-check-label" for="content">Content</label>
-    </div>
+      </div>
       <div class="form-check form-check-inline">
-        <input class="form-check-input" id="bored" type="checkbox" name="extraFeelings" data-sb-validations=""/>
+        <input class="form-check-input" id="bored" type="checkbox" name="extraFeelings" data-sb-validations="" />
         <label class="form-check-label" for="bored">Bored</label>
-    </div>
+      </div>
       <div class="form-check form-check-inline">
-        <input class="form-check-input" id="tired" type="checkbox" name="extraFeelings" data-sb-validations=""/>
+        <input class="form-check-input" id="tired" type="checkbox" name="extraFeelings" data-sb-validations="" />
         <label class="form-check-label" for="tired">Tired</label>
-    </div>
+      </div>
       <div class="form-check form-check-inline">
-        <input class="form-check-input" id="stressed" type="checkbox" name="extraFeelings" data-sb-validations=""/>
+        <input class="form-check-input" id="stressed" type="checkbox" name="extraFeelings" data-sb-validations="" />
         <label class="form-check-label" for="stressed">Stressed</label>
-    </div>
+      </div>
       <div class="form-check form-check-inline">
-        <input class="form-check-input" id="lonely" type="checkbox" name="extraFeelings" data-sb-validations=""/>
+        <input class="form-check-input" id="lonely" type="checkbox" name="extraFeelings" data-sb-validations="" />
         <label class="form-check-label" for="lonely">Lonely</label>
-    </div>
-       <div class="form-check form-check-inline">
-        <input class="form-check-input" id="annoyed" type="checkbox" name="extraFeelings" data-sb-validations=""/>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" id="annoyed" type="checkbox" name="extraFeelings" data-sb-validations="" />
         <label class="form-check-label" for="annoyed">Annoyed</label>
-    </div>
-       <div class="form-check form-check-inline">
-        <input class="form-check-input" id="disappointed" type="checkbox" name="extraFeelings" data-sb-validations=""/>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" id="disappointed" type="checkbox" name="extraFeelings" data-sb-validations="" />
         <label class="form-check-label" for="disappointed">Disappointed</label>
-    </div>
-       <div class="form-check form-check-inline">
-        <input class="form-check-input" id="anxious" type="checkbox" name="extraFeelings" data-sb-validations=""/>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" id="anxious" type="checkbox" name="extraFeelings" data-sb-validations="" />
         <label class="form-check-label" for="anxious">Anxious</label>
-    </div>
-       <div class="form-check form-check-inline">
-        <input class="form-check-input" id="sad" type="checkbox" name="extraFeelings" data-sb-validations=""/>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" id="sad" type="checkbox" name="extraFeelings" data-sb-validations="" />
         <label class="form-check-label" for="sad">Sad</label>
-    </div>
-    <div class="form-check form-check-inline">
-        <input class="form-check-input" id="hurt" type="checkbox" name="extraFeelings" data-sb-validations=""/>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" id="hurt" type="checkbox" name="extraFeelings" data-sb-validations="" />
         <label class="form-check-label" for="hurt">Hurt</label>
-    </div>
-    <div class="form-check form-check-inline">
-        <input class="form-check-input" id="angry" type="checkbox" name="extraFeelings" data-sb-validations=""/>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" id="angry" type="checkbox" name="extraFeelings" data-sb-validations="" />
         <label class="form-check-label" for="angry">Angry</label>
-    </div>
-    <div class="form-check form-check-inline">
-        <input class="form-check-input" id="confused" type="checkbox" name="extraFeelings" data-sb-validations=""/>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" id="confused" type="checkbox" name="extraFeelings" data-sb-validations="" />
         <label class="form-check-label" for="confused">Confused</label>
-    </div>
-    <div class="form-check form-check-inline">
-        <input class="form-check-input" id="distracted" type="checkbox" name="extraFeelings" data-sb-validations=""/>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" id="distracted" type="checkbox" name="extraFeelings" data-sb-validations="" />
         <label class="form-check-label" for="distracted">Distracted</label>
-    </div>
-    <div class="form-check form-check-inline">
-        <input class="form-check-input" id="blessed" type="checkbox" name="extraFeelings" data-sb-validations=""/>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" id="blessed" type="checkbox" name="extraFeelings" data-sb-validations="" />
         <label class="form-check-label" for="blessed">Blessed</label>
-    </div>
-    <div class="form-check form-check-inline">
-        <input class="form-check-input" id="inspired" type="checkbox" name="extraFeelings" data-sb-validations=""/>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" id="inspired" type="checkbox" name="extraFeelings" data-sb-validations="" />
         <label class="form-check-label" for="inspired">Inspired</label>
-    </div>
-     <div class="form-check form-check-inline">
-         <input class="form-check-input" id="" type="checkbox" name="extraFeelings" data-sb-validations=""/>
-        <label class="form-check-label" for=""></label>
-        </form>
-        <div>
+      </div>
+      <div>
+        <div class="d-none" id="submitSuccess">
+          <div class="text-center mb-3">
+            <div class="fw-bolder">Entry submitted successfully!</div>
+          </div>
+          <div class="d-none" id="submitError">
+            <div class="text-center text-danger mb-3"> Error submitting entry!</div>
+          </div>
+          <div class="d-grid">
+            <button class="btn btn-primary btn-lg disabled" id="submitButton" type="submit">Submit</button>
+          </div>
+  </form>
 </div>
 <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>

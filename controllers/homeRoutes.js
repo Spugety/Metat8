@@ -1,6 +1,10 @@
 const router = require('express').Router();
+const { application } = require('express');
 const { User, Day } = require('../models');
 
+router.get('/', (req, res)=>{
+res.render('all');
+});
 
 //find a user
 router.get('/', async (req, res) => {
@@ -39,7 +43,11 @@ router.get('/login', (req, res) => {
         res.redirect('/profile');
         return;
     }
-    res.render('login');
+    res.render('entry');
+});
+router.get('/entry', (req, res) => {
+    
+    res.render('all', {layout: 'main'});
 });
 
 module.exports = router;
