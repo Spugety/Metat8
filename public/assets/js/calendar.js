@@ -9,6 +9,14 @@ let clicked = null; // whatever day you clicked on
 const weekdaysArray = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 const monthsArray = ["January","February","March","April","May","June","July","August","September","October","November","December"]
 
+function saveTodayEntry() {
+    
+}
+
+function viewDateEntry() {
+
+}
+
 function renderCalendar() {
     let date = new Date();
 
