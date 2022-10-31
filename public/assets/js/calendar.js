@@ -51,7 +51,7 @@ function renderCalendar() {
             daySlot.innerText = i - disabledDays;
             // add button click listener
             daySlot.addEventListener("click", () => {
-                console.log("click");
+                //insertcodeherelmaoasdhfjahsuehjaskdhfj
             });
         } else {
             daySlot.classList.add("disabled");
@@ -66,13 +66,11 @@ function renderCalendar() {
 
 function buttonFunction() {
     backBtn.addEventListener("click", () => {
-        console.log("clicked");
         monthInc--;
         renderCalendar();
     });
 
     nextBtn.addEventListener("click", () => {
-        console.log("clicked");
         monthInc++;
         renderCalendar();
     });
