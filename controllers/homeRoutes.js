@@ -13,6 +13,7 @@ router.get('/', async (req, res) => {
         const userData = await User.findOne({
             where: {
                 // email: req.params.email,dated
+
                 username: req.params.username,
             },
         });
