@@ -22,55 +22,25 @@
 
             <div class="container">
               <label for="usrname"></label>
-              <input
+              <input id="userid"
                 type="text"
                 placeholder="Enter Username"
                 name="usrname"
-                required/>
+                required
+              />
 
               <label for="pswrd"></label>
-              <input
+              <input id="passid"
                 type="password"
                 placeholder="Enter Password"
                 name="pswrd"
                 required
               />
 
-              <button type="submit" id="submitLogin" action="/login">Login</button>
+              <button type="submit" id="submitLogin">Login</button>
               <button type="signup" id="signupButton">Create an account!</button>
               <script>
-                const signupButtonClick = document.getElementById('signupButton');
-                const submitLogin = document.getElementById("submitLogin");
-
-                signupButtonClick = document.addEventListener('click' createAccount)
-                submitLogin.addEventListener('click', initMotivate);
-                function createAccount() => {
-                  post.
-                }
-               
-               
-               
-               
-               
-               
-               
-               
-               
-                function initMotivate(username, password) {
-    $.post("/api/day", {
-      username: username
-      password: password
-    })
-      .then(() => {
-        window.location.replace("/");
-        // If there's an error, log the error
-      })
-      .catch(err => {
-        console.log(err);
-      });
-                }
-
-
+                
               </script>
             </div>
 

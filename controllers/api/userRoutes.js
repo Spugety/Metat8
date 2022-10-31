@@ -21,8 +21,9 @@ router.get('/', async (req, res) => {
 
 //Create new user 
 router.post('/', async (req, res) => {
+    
     try {
-        const userData = await User.create({ ...req.body });
+        const userData = await User.create( req.body );
         req.session.save(() => {
             req.session.loggedIn = true;
             res.status(200).json(userData);
@@ -35,18 +36,21 @@ router.post('/', async (req, res) => {
 });
 // Login user
 router.post('/login', async (req, res) => {
+    console.log(req.body);
     try {
         const userData = await User.findOne({
             where: {
-                // email: req.body.email,
                 username: req.body.username,
+                password: req.body.password,
             },
         });
+        console.log(userData.get({plain: true}));
         if (!userData) {
             res.status(400).json({ message: 'Invalid Login information. Please try again!' });
             return;
         }
         const validPassword = await userData.checkPassword(req.body.password);
+        console.log(validPassword);
         if (!validPassword) {
             res.status(400).json({ message: 'Invalid Login information. Please try again!' });
             return;
