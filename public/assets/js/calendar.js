@@ -73,10 +73,10 @@ function renderCalendar() {
 }
 
 function buttonFunction() {
-    backBtn.addEventListener("click", () => {
-        monthInc--;
-        renderCalendar();
-    });
+    // backBtn.addEventListener("click", () => {
+    //     monthInc--;
+    //     renderCalendar();
+    // });
 
     nextBtn.addEventListener("click", () => {
         monthInc++;
@@ -84,5 +84,5 @@ function buttonFunction() {
     });
 }
 
-buttonFunction();
+// buttonFunction();
 renderCalendar();
