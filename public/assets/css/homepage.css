@@ -98,8 +98,15 @@ button:hover {
 
 }
 
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: column;
+}
+
+
 .modal-content {
-    background-color: rgb(178, 172, 136);
+    background-color: rgb(91, 119, 158);
     margin: 30% auto;
     padding: 20px;
     width: 70%;
