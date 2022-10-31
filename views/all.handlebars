@@ -1,136 +1,109 @@
- 
+{{!-- 
  <header>
-      <button id="login">login</button>
-      <div id="loginModal" class="modal">
-        <div class="modal-content">
-          <span class="close">&times;</span>
-          <form action="action_page.php" method="post">
-            <div class="imgcontainer">
-              <img src="img_avatar2.png" alt="Avatar" class="avatar" />
-            </div>
-               <h1>Meta &infin;</h1>
-      <p>Your Mindful Meditation Homepage</p>
-      <div id="messageOfTheDay"></div>
-          </form>
-
-            <div class="container">
-              <label for="uname"><b>Username</b></label>
-              <input
-                type="text"
-                placeholder="Enter Username"
-                name="uname"
-                required/>
-
-              <label for="psw"><b>Password</b></label>
-              <input
-                type="password"
-                placeholder="Enter Password"
-                name="psw"
-                required
-              />
-
-              <button type="submit">Login</button>
-              <label>
-                <input type="checkbox" checked="checked" name="remember" />
-                Remember me
-              </label>
-            </div>
-
-            <div class="container" style="background-color: #f1f1f1">
-              <button type="button" class="cancelbtn">Cancel</button>
-              <span class="psw">Forgot <a href="#">password?</a></span>
-            </div>
-          </form>
-        </div>
-      </div>
       <h1>Meta &infin;</h1>
 
       <p>Your Mindful Meditation Homepage</p>
-      <div id="messageOfTheDay"></div>
+      <div id="messageOfTheDay"></div> --}}
 
-      <div>
-        <select name="moods" id="moods">
+      {{!-- <div id="mood"> --}}
+        {{!-- <select name="moods" id="moods">
           <option value="">Choose A Mood:</option>
           <option value="great">Great</option>
           <option value="good">Good</option>
           <option value="okay">Okay</option>
           <option value="awful">Awful</option>
-        </select>
-      </div>
-           <div class="container">
-              <label for="uname"><b>Username</b></label>
+        </select> --}}
+      {{!-- <button id="login">login</button> --}}
+
+      <div id="loginModal" class="modal">
+        <div class="modal-content">
+          <form action="action_page.php" method="post">
+          </form>
+
+            <div class="container">
+              <label for="usrname"></label>
               <input
                 type="text"
                 placeholder="Enter Username"
-                name="uname"
-                required
-              />
-              <label for="psw"><b>Password</b></label>
+                name="usrname"
+                required/>
+
+              <label for="pswrd"></label>
               <input
                 type="password"
                 placeholder="Enter Password"
-                name="psw"
+                name="pswrd"
                 required
               />
-              <button type="submit">Login</button>
-              <label>
-                <input type="checkbox" checked="checked" name="remember" />
-                Remember me
-              </label>
+
+              <button type="submit" id="submitLogin" action="/login">Login</button>
+              <button type="signup" id="signupButton">Create an account!</button>
+              <script>
+                const signupButtonClick = document.getElementById('signupButton');
+                const submitLogin = document.getElementById("submitLogin");
+
+                signupButtonClick = document.addEventListener('click' createAccount)
+                submitLogin.addEventListener('click', initMotivate);
+                function createAccount() => {
+                  post.
+                }
+               
+               
+               
+               
+               
+               
+               
+               
+               
+                function initMotivate(username, password) {
+    $.post("/api/day", {
+      username: username
+      password: password
+    })
+      .then(() => {
+        window.location.replace("/");
+        // If there's an error, log the error
+      })
+      .catch(err => {
+        console.log(err);
+      });
+                }
+
+
+              </script>
             </div>
-            <div class="container" style="background-color: #f1f1f1">
-              <button type="button" class="cancelbtn">Cancel</button>
-              <span class="psw">Forgot <a href="#">password?</a></span>
+
             </div>
           </form>
         </div>
       </div>
-   
-      <div>
-        <select name="moods" id="moods">
-          <option value="">Choose A Mood:</option>
-          <option value="great">Great</option>
-          <option value="good">Good</option>
-          <option value="okay">Okay</option>
-          <option value="awful">Awful</option>
-        </select>
-      </div>
-    </header>
-   
-  </body>
-    </header>
-
-{{!-- <header>
-    <button id="login">login</button>
-    <div id="loginModal" class="modal">
-      <div class="modal-content">
-        <span class="close">&times;</span>
-        <form action="action_page.php" method="post">
-          <div class="imgcontainer">
-            <img src="img_avatar2.png" alt="Avatar" class="avatar">
-          </div>
-        
-          <div class="container">
-            <label for="uname"><b>Username</b></label>
-            <input type="text" placeholder="Enter Username" name="uname" required>
-        
-            <label for="psw"><b>Password</b></label>
-            <input type="password" placeholder="Enter Password" name="psw" required>
-        
-            <button type="submit">Login</button>
-            <label>
-              <input type="checkbox" checked="checked" name="remember"> Remember me
-            </label>
-          </div>
-        
-          <div class="container" style="background-color:#f1f1f1">
-            <button type="button" class="cancelbtn">Cancel</button>
-            <span class="psw">Forgot <a href="#">password?</a></span>
-          </div>
-        </form> 
-      </div>
     </div>
-    <h1>Meta &infin;</h1>
-  
-    <p>Your Mindful Meditation Homepage</p>
-  </header>  --}}
+    
+  </div>
+
+      <script> 
+
+        const modal = document.getElementById("loginModal");
+        const loginClick = document.getElementById("login");
+
+  loginClick.addEventListener('click', initModal);
+  window.addEventListener('click', cancelModal);
+
+  function initModal(){
+    modal.style.display ='block';
+  }
+
+  function cancelModal(){
+    if(event.target == modal){
+    modal.style.display = 'none';
+  }
+  }
+      </script>
+      </div>
+
+  </body>
+    {{!-- </header> --}}
+
+
+
