@@ -44,7 +44,7 @@ header::before {
     top: 0;
     display: block;
     background-image: url(../../media/relaxTree.jpg);
-    background-size: contain;
+    background-size: fill;
     background-repeat: no-repeat;
     transform-origin: center center 0;
     transform: translateZ(-1px) scale(2);
