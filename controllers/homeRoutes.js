@@ -39,9 +39,12 @@ router.get('/profile', async (req, res) => {
         res.status(500).json(err);
     }
 });
+
+
+
 router.get('/dashboard', (req, res) => {
-    if (req.session.loggedIn) {
-        res.redirect('/dashboard');
+    if (!req.session.loggedIn) {
+        res.redirect('/');
         return;
     }
     res.render('entry');
