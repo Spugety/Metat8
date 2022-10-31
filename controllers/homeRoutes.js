@@ -40,10 +40,10 @@ router.get('/profile', async (req, res) => {
     }
 });
 router.get('/dashboard', (req, res) => {
-    // if (req.session.loggedIn) {
-    //     res.redirect('/dashboard');
-    //     return;
-    // }
+    if (req.session.loggedIn) {
+        res.redirect('/dashboard');
+        return;
+    }
     res.render('entry');
 });
 router.get('/entry', (req, res) => {

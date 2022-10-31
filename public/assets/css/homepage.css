@@ -70,7 +70,7 @@ button {
    border-radius:8px;
    text-align: center;
    font-size: 18px;
-   margin-left: 300px;
+   margin-left: 0;
    cursor: pointer;
    text-decoration: none;
    min-height: 25px;
@@ -87,12 +87,12 @@ button:hover {
 
 .modal {
     display: none;
-    position: fixed;
-    z-index: 2;
+    position: relative;
+    z-index: 3;
     left: 0;
     top: 0;
-    height: 30%;
-    width: 30%;
+    height: 300px;
+    width: 10%;
     overflow: auto;
     background-color: rgba(0, 0, 0, 0);
 
@@ -108,13 +108,13 @@ button:hover {
 
 
 .modal-content {
-    position: relative;
     display: flex;
+    position: static;
     flex-direction: column;
+    justify-content: center;
     background-color: rgb(91, 119, 158);
-    margin: 30% auto;
-    padding: 20px;
-    width: 20%;
+    margin:auto;
+    width: 100%;
     box-shadow: 0 25px 25px 0 rgba(0, 0, 0, 1), 0, 25px, 25px, 0 rgba(0, 0, 0, 1);
     animation-name: tony;
     animation-duration: 1.7s;
