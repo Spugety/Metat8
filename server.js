@@ -14,7 +14,7 @@ const PORT = process.env.PORT || 9999;
 
 //creating a session middleware with cookie properties
 const sess= {
-  secret: 'Just breath',
+  secret: 'no more breath',
   cookie: {
     maxAge: 60 * 60 * 1000,
     httpOnly: true,

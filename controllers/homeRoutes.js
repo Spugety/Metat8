@@ -23,14 +23,14 @@ router.get('/', async (req, res) => {
         res.status(500).json(err)
     }
 });
-router.get('/profile', async (req, res) => {
+router.get('/', async (req, res) => {
     try {
         const userData = await User.findByPk(req.session.userId,{
             attributes: { exclude: ['password'] },
             include: [{ model: Day }],
         });
         const user = userData.get({ plain: true });
-        res.render('profile', {
+        res.render('', {
             ...user,
             loggedIn: true
         });
@@ -41,14 +41,14 @@ router.get('/profile', async (req, res) => {
 });
 router.get('/dashboard', (req, res) => {
     if (req.session.loggedIn) {
-        res.redirect('/profile');
+        res.redirect('/dashboard');
         return;
     }
     res.render('entry');
 });
-router.get('/entry', (req, res) => {
+// router.get('/entry', (req, res) => {
     
-    res.render('all', {layout: 'main'});
-});
+//     res.render('all', {layout: 'main'});
+// });
 
 module.exports = router;

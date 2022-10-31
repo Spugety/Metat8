@@ -9,16 +9,6 @@ let clicked = null; // whatever day you clicked on
 const weekdaysArray = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 const monthsArray = ["January","February","March","April","May","June","July","August","September","October","November","December"]
 
-// save entry information for today
-function saveTodayEntry() {
-    
-}
-
-// opens modal to view entry information on present/past date
-function viewDateEntry() {
-    
-}
-
 // make calendar
 function renderCalendar() {
     let date = new Date();
@@ -79,6 +69,7 @@ function renderCalendar() {
 function buttonFunction() {
     // when you click button
     backBtn.addEventListener("click", () => {
+        console.log("clicked");
         // decrement monthInc
         monthInc--;
         // call to make calendar again
@@ -87,9 +78,20 @@ function buttonFunction() {
     });
 
     nextBtn.addEventListener("click", () => {
+        console.log("clicked");
         monthInc++;
         renderCalendar();
     });
+}
+
+// save entry information for today
+function saveTodayEntry() {
+    
+}
+
+// opens modal to view entry information on present/past date
+function viewDateEntry() {
+    
 }
 
 //call functions
