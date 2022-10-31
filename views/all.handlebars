@@ -1,6 +1,6 @@
+    <script src="/assets/js/login.js"></script>
  
       
-      <button id="login">login</button>
  <header>
       <h1>Meta &infin;</h1>
 
@@ -15,10 +15,18 @@
           <option value="okay">Okay</option>
           <option value="awful">Awful</option>
         </select>
+      <button id="login">login</button>
+      <script> 
+        const loginClick = document.getElementById("login");
+      
+        loginClick.addEventListener("click", initModal);
+        console.log(`button clicked!`);
+      </script>
       </div>
 
   </body>
     </header>
+
       {{!-- <div id="loginModal" class="modal">
         <div class="modal-content">
           <span class="close">&times;</span>
