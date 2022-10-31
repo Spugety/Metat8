@@ -25,8 +25,8 @@
     </div>
   </div>
   <!-- Calendar Test -->
-
-<div class="container-fluid bg-light">
+<script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+<div class="container-fluid bg-light text-dark">
   <form id="formData">
     <div class="row">
         <div class="mb-3">
@@ -157,11 +157,10 @@
         <input class="form-check-input" id="inspired" type="checkbox" name="extraFeelings"  />
         <label class="form-check-label" for="inspired">Inspired</label>
       </div>
-      <div>
         <div class="d-grid">
-            <button class="btn btn-primary btn-lg disabled" id="submitButton" type="submit">Submit</button>
+            <button class="btn btn-primary btn-lg" id="submitButton" type="submit" value="submit">Submit</button>
           </div>
-        <div class="d-none" id="submitSuccess">
+        {{!-- <div class="d-none" id="submitSuccess">
           <div class="text-center mb-3">
             <div class="fw-bolder">Entry submitted successfully!</div>
           </div>
@@ -169,7 +168,7 @@
             <div class="text-center text-danger mb-3"> Error submitting entry!</div>
           </div>
             <button class="btn btn-primary" id="submitButton" type="submit">Submit</button>
-          </div>
+          </div> --}}
           </form>
           </div>
   </form>

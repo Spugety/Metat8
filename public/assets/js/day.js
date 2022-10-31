@@ -1,35 +1,36 @@
 // code for entering affirmation and journal entries 
 
-$(document).ready(()=>{
-    $('#formData').on('submit', function(event){
-        event.preventDefault();
+$(document).ready((getEntry) => {
 
-        const moodData={
-            mood: $("[name=todaysMood]:checked").val(),
+    $('#formData').on('click', function (event) {
+        event.preventDefault();
+        getEntry();
+        const moodData = {
+            mood: $("[name=todaysMood]:checked").val().trim,
         };
         console.log(moodData);
-        
-        const intentionsData={
-            entry: $("#GoalIntentionAffirmation").val().tim
+
+        const intentionsData = {
+            entry: $("#GoalIntentionAffirmation").val().trim,
         };
-        const jouralEntry= {
-            entry: $("#journalEntry").val().tim
+        const jouralEntry = {
+            entry: $("#journalEntry").val().trim
         };
-        const feelingsData={
-            mood: $("[name=extraFeelings]:checked").val(),
+        const feelingsData = {
+            mood: $("[name=extraFeelings]:checked").val().trim,
         };
 
-        submitData (moodData, intentionsData, jouralEntry, feelingsData);
+        submitData(moodData, intentionsData, jouralEntry, feelingsData);
     });
-    function submitData( dataMood, dataIntentions, dataJournal, dataFeelings){
+    function submitData(dataMood, dataIntentions, dataJournal, dataFeelings) {
         $.ajax({
-            url:"/api/day",
+            url: "/api/day",
             method: "POST",
             data: { dataMood: dataMood, dataIntentions: dataIntentions, dataJournal: dataJournal, dataFeelings: dataFeelings }
         })
-        .then(function(data){
-            console.log(data);
-            window.location.href= data.redirect;
-        });
+            .then(function (data) {
+                console.log(data);
+                window.location.href = data.redirect;
+            });
     }
 })
