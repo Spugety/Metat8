@@ -24,7 +24,7 @@ function initMotivate() {
   console.log(userid);
   console.log(passid);
   
-    fetch("/api/user/login", {
+    fetch("/api/user/login",{
         method: "POST",
         body: JSON.stringify({
             username: userid,
