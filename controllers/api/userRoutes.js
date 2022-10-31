@@ -18,6 +18,7 @@ router.get('/', async (req, res) => {
         res.status(500).json(err);
     }
 });
+
 //Create new user 
 router.post('/', async (req, res) => {
     try {
