@@ -41,10 +41,11 @@ router.post('/login', async (req, res) => {
         const userData = await User.findOne({
             where: {
                 username: req.body.username,
-                password: req.body.password,
+        
             },
         });
-        console.log(userData.get({plain: true}));
+        // console.log(userData.get({plain: true}));
+        console.log(userData);
         if (!userData) {
             res.status(400).json({ message: 'Invalid Login information. Please try again!' });
             return;

@@ -13,7 +13,6 @@ router.get('/', async (req, res) => {
         const userData = await User.findOne({
             where: {
                 // email: req.params.email,dated
-
                 username: req.params.username,
             },
         });
@@ -31,7 +30,7 @@ router.get('/profile', async (req, res) => {
             include: [{ model: Day }],
         });
         const user = userData.get({ plain: true });
-        res.render('profile', {
+        res.render('entry', {
             ...user,
             loggedIn: true
         });
@@ -42,12 +41,12 @@ router.get('/profile', async (req, res) => {
 });
 router.get('/dashboard', (req, res) => {
     if (req.session.loggedIn) {
-        res.redirect('/profile');
+        res.redirect('/dashboard');
         return;
     }
     res.render('entry');
 });
-router.get('/entry', (req, res) => {
+router.get('/', (req, res) => {
     
     res.render('all', {layout: 'main'});
 });

@@ -6,7 +6,7 @@ async function seedDatabase() {
     const testUser= [
         {
         username: 'testuser123',
-        email: 'testuser123@gmail.com',
+        // email: 'testuser123@gmail.com',
         password: 'testpass123',
         },
     ];
