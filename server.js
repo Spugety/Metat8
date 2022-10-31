@@ -8,7 +8,7 @@ const app = express();
 // const hbs = exphbs.create({defaultLayout: 'main'});
 
 
-const hbs = exphbs.create({ defaultLayout: "",
+const hbs = exphbs.create({ defaultLayout: 'main',
 layoutsDir: "",})
 const PORT = process.env.PORT || 9999;
 
@@ -31,18 +31,16 @@ app.use(session(sess));
 
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
+app.set('views', './views');
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static("public"));
+// app.use(express.static(path.join(__dirname, '/public')));
 
 // const days =require('./models/Day');
 // const users=require('./models/User');
 
-
-// create a route that listens for a get to '/'
-// -- get any data needed from the db if applicable
-// -- render your 'all' template to the user
 
 //Today routes
 app.use(routes);
