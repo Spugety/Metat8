@@ -79,18 +79,18 @@
     border-radius: 10px;
 }
 
-.calendarWrapper header {
+.calendarWrapper .calendarHeader {
     display: flex;
     align-items: center;
     padding: 30px 30px 20px;
     justify-content: space-between;
 }
 
-.calendarWrapper header .current-date {
+.calendarWrapper .calendarHeader .current-date {
     font-weight: bold;
 }
 
-.calendarWrapper header .arrows button {
+.calendarWrapper .calendarHeader .arrows button {
     padding: 5px 10px 5px 10px;
     border: none;
     border-radius: 30%;
@@ -98,11 +98,11 @@
     cursor: pointer;
 }
 
-.calendarWrapper header .arrows button:hover {
+.calendarWrapper .calendarHeader .arrows button:hover {
     background: lightskyblue;
 }
 
-.calendarWrapper header .currentDate {
+.calendarWrapper .calendarHeader .currentDate {
     font-size: 30px;
     font-weight: bold;
 }
