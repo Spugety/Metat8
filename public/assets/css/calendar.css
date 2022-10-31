@@ -91,6 +91,7 @@
 }
 
 .calendarWrapper .calendarHeader .arrows button {
+    width: 40px;
     padding: 5px 10px 5px 10px;
     border: none;
     border-radius: 30%;
@@ -108,7 +109,7 @@
 }
 
 .calendar {
-    padding: 10px;
+    padding: 5px 35px 5px 5px;
 }
 
 .calendar ul {
