@@ -12,7 +12,7 @@ router.get('/', async (req, res) => {
     try {
         const userData = await User.findOne({
             where: {
-                // email: req.params.email,
+                // email: req.params.email,dated
                 username: req.params.username,
             },
         });
@@ -30,7 +30,7 @@ router.get('/', async (req, res) => {
             include: [{ model: Day }],
         });
         const user = userData.get({ plain: true });
-        res.render('', {
+        res.render('entry', {
             ...user,
             loggedIn: true
         });
@@ -39,16 +39,18 @@ router.get('/', async (req, res) => {
         res.status(500).json(err);
     }
 });
+
+
+
 router.get('/dashboard', (req, res) => {
-    if (req.session.loggedIn) {
-        res.redirect('/dashboard');
+    if (!req.session.loggedIn) {
+        res.redirect('/');
         return;
     }
     res.render('entry');
 });
-// router.get('/entry', (req, res) => {
-    
-//     res.render('all', {layout: 'main'});
-// });
+router.get('/', (req, res) => {
+    res.render('all', {layout: 'main'});
+});
 
 module.exports = router;
