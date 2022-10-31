@@ -12,7 +12,7 @@ router.get('/', async (req, res) => {
     try {
         const userData = await User.findOne({
             where: {
-                email: req.params.email,
+                // email: req.params.email,
                 username: req.params.username,
             },
         });
