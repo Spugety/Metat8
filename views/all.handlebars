@@ -1,19 +1,19 @@
-
+{{!-- 
  <header>
       <h1>Meta &infin;</h1>
 
       <p>Your Mindful Meditation Homepage</p>
-      <div id="messageOfTheDay"></div>
+      <div id="messageOfTheDay"></div> --}}
 
-      <div id="mood">
-        <select name="moods" id="moods">
+      {{!-- <div id="mood"> --}}
+        {{!-- <select name="moods" id="moods">
           <option value="">Choose A Mood:</option>
           <option value="great">Great</option>
           <option value="good">Good</option>
           <option value="okay">Okay</option>
           <option value="awful">Awful</option>
-        </select>
-      <button id="login">login</button>
+        </select> --}}
+      {{!-- <button id="login">login</button> --}}
 
       <div id="loginModal" class="modal">
         <div class="modal-content">
@@ -36,7 +36,42 @@
                 required
               />
 
-              <button type="submit" action="/login">Login</button>
+              <button type="submit" id="submitLogin" action="/login">Login</button>
+              <button type="signup" id="signupButton">Create an account!</button>
+              <script>
+                const signupButtonClick = document.getElementById('signupButton');
+                const submitLogin = document.getElementById("submitLogin");
+
+                signupButtonClick = document.addEventListener('click' createAccount)
+                submitLogin.addEventListener('click', initMotivate);
+                function createAccount() => {
+                  post.
+                }
+               
+               
+               
+               
+               
+               
+               
+               
+               
+                function initMotivate(username, password) {
+    $.post("/api/day", {
+      username: username
+      password: password
+    })
+      .then(() => {
+        window.location.replace("/");
+        // If there's an error, log the error
+      })
+      .catch(err => {
+        console.log(err);
+      });
+                }
+
+
+              </script>
             </div>
 
             </div>
@@ -68,7 +103,7 @@
       </div>
 
   </body>
-    </header>
+    {{!-- </header> --}}
 
 
 

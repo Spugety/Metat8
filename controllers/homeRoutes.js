@@ -12,7 +12,7 @@ router.get('/', async (req, res) => {
     try {
         const userData = await User.findOne({
             where: {
-                email: req.params.email,
+                // email: req.params.email,
                 username: req.params.username,
             },
         });
@@ -39,7 +39,7 @@ router.get('/profile', async (req, res) => {
         res.status(500).json(err);
     }
 });
-router.get('/login', (req, res) => {
+router.get('/dashboard', (req, res) => {
     if (req.session.loggedIn) {
         res.redirect('/profile');
         return;
