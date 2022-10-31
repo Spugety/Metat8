@@ -8,7 +8,7 @@ const app = express();
 // const hbs = exphbs.create({defaultLayout: 'main'});
 
 
-const hbs = exphbs.create({ defaultLayout: '',
+const hbs = exphbs.create({ defaultLayout: 'main',
 layoutsDir: "",})
 const PORT = process.env.PORT || 9999;
 
@@ -31,6 +31,7 @@ app.use(session(sess));
 
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
+app.set('views', './views');
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
