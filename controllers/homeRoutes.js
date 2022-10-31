@@ -39,7 +39,7 @@ router.get('/profile', async (req, res) => {
         res.status(500).json(err);
     }
 });
-router.get('/login', (req, res) => {
+router.get('/dashboard', (req, res) => {
     if (req.session.loggedIn) {
         res.redirect('/profile');
         return;
