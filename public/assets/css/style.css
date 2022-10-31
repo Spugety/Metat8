@@ -134,7 +134,6 @@
 }
 
 .calendar .dates .disabled {
-    height: 70px;
     background: white !important;
     cursor: default !important;
 }
