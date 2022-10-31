@@ -74,7 +74,7 @@
 }
 
 .calendarWrapper {
-    width: 450px;
+    width: 500px;
     background: white;
     border-radius: 10px;
 }
@@ -90,15 +90,16 @@
     font-weight: bold;
 }
 
-.calendarWrapper header .arrows span {
+.calendarWrapper header .arrows button {
     padding: 5px 10px 5px 10px;
+    border: none;
     border-radius: 30%;
-    background: lightgray;
+    background: lightsteelblue;
     cursor: pointer;
 }
 
-.calendarWrapper header .arrows span:hover {
-    background: gray;
+.calendarWrapper header .arrows button:hover {
+    background: lightskyblue;
 }
 
 .calendarWrapper header .currentDate {
@@ -122,5 +123,23 @@
 }
 
 .calendar ul li {
-    width: 14%;
+    width: 14.2%;
+}
+
+.calendar .dates .day {
+    height: 60px;
+    border-radius: 30%;
+    background: white;
+    box-sizing: border-box;
+}
+
+.calendar .dates .disabled {
+    height: 70px;
+    background: white !important;
+    cursor: default !important;
+}
+
+.calendar .dates .day:hover {
+    background: lightskyblue;
+    cursor: pointer;
 }
