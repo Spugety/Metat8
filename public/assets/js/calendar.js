@@ -9,14 +9,17 @@ let clicked = null; // whatever day you clicked on
 const weekdaysArray = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 const monthsArray = ["January","February","March","April","May","June","July","August","September","October","November","December"]
 
+// save entry information for today
 function saveTodayEntry() {
     
 }
 
+// opens modal to view entry information on present/past date
 function viewDateEntry() {
-
+    
 }
 
+// make calendar
 function renderCalendar() {
     let date = new Date();
 
@@ -53,11 +56,11 @@ function renderCalendar() {
         // each div tag has day class
         daySlot.classList.add("day");
 
-        // index is on a disabled day
+        // if index is not a disabled date
         if(i > disabledDays) {
-            //
+            // daySlot text is index - disabledDays: which should be the date
             daySlot.innerText = i - disabledDays;
-            // add button click listener
+            // add button click listener for dates
             daySlot.addEventListener("click", () => {
                 //insertcodeherelmaoasdhfjahsuehjaskdhfj
             });
@@ -72,11 +75,16 @@ function renderCalendar() {
     currentDate.innerText = `${monthsArray[currMonth]} ${currYear}`;
 }
 
+// make arrow buttons for month increment
 function buttonFunction() {
-    // backBtn.addEventListener("click", () => {
-    //     monthInc--;
-    //     renderCalendar();
-    // });
+    // when you click button
+    backBtn.addEventListener("click", () => {
+        // decrement monthInc
+        monthInc--;
+        // call to make calendar again
+        // inside renderCalendar() function should be logic for changing month/year automatically
+        renderCalendar();
+    });
 
     nextBtn.addEventListener("click", () => {
         monthInc++;
@@ -84,5 +92,6 @@ function buttonFunction() {
     });
 }
 
-// buttonFunction();
+//call functions
+buttonFunction();
 renderCalendar();
