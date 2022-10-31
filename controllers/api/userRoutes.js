@@ -36,6 +36,7 @@ router.post('/', async (req, res) => {
 });
 // Login user
 router.post('/login', async (req, res) => {
+    console.log("HIT ME BABY ONE MORE TIME")
     console.log(req.body);
     try {
         const userData = await User.findOne({
