@@ -12,26 +12,30 @@ const monthsArray = ["January","February","March","April","May","June","July","A
 function renderCalendar() {
     let date = new Date();
 
-    if(monthInc !== 0) {
-        date.setMonth(new Date().getMonth() + monthInc);
+    if(monthInc !== 0) { // if month increment counter had been touched before at all
+        date.setMonth(new Date().getMonth() + monthInc); // update date object. date object automatically handles the month/year calculation
     }
 
     let currMonth = date.getMonth(); // gives month number in array index (starts at 0)
     let currYear = date.getFullYear(); // gives 4 digit year number
 
-    const monthfirstDay = new Date(currYear, currMonth, 1);
+    const monthFirstDay = new Date(currYear, currMonth, 1);
     const monthTotalDays = new Date(currYear, currMonth+1, 0).getDate(); // next month first date - 1 = this month last date
 
-    const firstDateToString = monthfirstDay.toLocaleDateString("en-us", {
+    // finds the weekday on the first day of the month, also formats the object's properties
+    const firstDateToString = monthFirstDay.toLocaleDateString("en-us", {
         weekday: "long",
         month: "numeric",
         day: "numeric",
         year: "numeric",
     });
 
-    // splits string into array of 2 halves. [0] is weekday [1] is date
+    // first splits string into array of 2 halves. [0] is weekday [1] is date
+    // then uses that weekday string and uses that to find the index of the weekdays array
+    // this is how to calculate the disabled days
     const disabledDays = weekdaysArray.indexOf(firstDateToString.split(", ")[0]);
     
+    // before we forloop to create the calendar dates remove any previous HTML elements
     datesClass.innerHTML = "";
 
     // loop for as long as total days in month + disabled days that are part of previous month
