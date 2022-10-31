@@ -81,12 +81,12 @@ button {
 }
 
 button:hover {
-    background: rgb(178, 172, 136);
+    background: rgb(91, 119, 158);
     color: #fff;
 }
 
 .modal {
-    /* display: none; */
+    display: none;
     position: fixed;
     z-index: 2;
     left: 0;
@@ -103,13 +103,18 @@ button:hover {
     margin: 30% auto;
     padding: 20px;
     width: 70%;
-    box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0), 0, 5px, 20px, 0 rgba(0, 0, 0, 0.17)
-
+    box-shadow: 0 25px 25px 0 rgba(0, 0, 0, 1), 0, 25px, 25px, 0 rgba(0, 0, 0, 1);
+    animation-name: tony;
+    animation-duration: 3s;
 }
 
-.cancel {
-    color: #fff;
-    float: right;
-    font-size: 20px;
 
+@keyframes tony{
+    from{
+        transform: translate(100%);
+    } 
+
+    to {
+        transform: translate(0%);
+    }
 }

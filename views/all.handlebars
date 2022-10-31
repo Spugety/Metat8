@@ -42,8 +42,6 @@
               <button type="submit">Login</button>
             </div>
 
-            <div class="container">
-              <button type="button" class="cancel">Cancel</button>
             </div>
           </form>
         </div>
@@ -54,17 +52,21 @@
 
       <script> 
 
-       
         const modal = document.getElementById("loginModal");
         const loginClick = document.getElementById("login");
-      
-        loginClick.addEventListener("click", () => {
-        initModal()
 
-        function initModal() {
-        modal.style.display = 'block';
-        }
-        });
+  loginClick.addEventListener('click', initModal);
+  window.addEventListener('click', cancelModal);
+
+  function initModal(){
+    modal.style.display ='block';
+  }
+
+  function cancelModal(){
+    if(event.target == modal){
+    modal.style.display = 'none';
+  }
+  }
       </script>
       </div>
 
