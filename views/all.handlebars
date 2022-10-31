@@ -1,19 +1,19 @@
-
+{{!-- 
  <header>
       <h1>Meta &infin;</h1>
 
       <p>Your Mindful Meditation Homepage</p>
-      <div id="messageOfTheDay"></div>
+      <div id="messageOfTheDay"></div> --}}
 
-      <div id="mood">
-        <select name="moods" id="moods">
+      {{!-- <div id="mood"> --}}
+        {{!-- <select name="moods" id="moods">
           <option value="">Choose A Mood:</option>
           <option value="great">Great</option>
           <option value="good">Good</option>
           <option value="okay">Okay</option>
           <option value="awful">Awful</option>
-        </select>
-      <button id="login">login</button>
+        </select> --}}
+      {{!-- <button id="login">login</button> --}}
 
       <div id="loginModal" class="modal">
         <div class="modal-content">
@@ -22,21 +22,26 @@
 
             <div class="container">
               <label for="usrname"></label>
-              <input
+              <input id="userid"
                 type="text"
                 placeholder="Enter Username"
                 name="usrname"
-                required/>
+                required
+              />
 
               <label for="pswrd"></label>
-              <input
+              <input id="passid"
                 type="password"
                 placeholder="Enter Password"
                 name="pswrd"
                 required
               />
 
-              <button type="submit" action="/login">Login</button>
+              <button type="submit" id="submitLogin">Login</button>
+              <button type="signup" id="signupButton">Create an account!</button>
+              <script>
+                
+              </script>
             </div>
 
             </div>
@@ -68,7 +73,7 @@
       </div>
 
   </body>
-    </header>
+    {{!-- </header> --}}
 
 
 
