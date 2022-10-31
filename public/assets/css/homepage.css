@@ -5,7 +5,8 @@ html {
   }
   
 body {
-    color:#fff;
+    
+    color:rgba(255, 255, 255, 0);
     margin: 0;
     padding: 0;
     perspective: 1px;
@@ -14,6 +15,7 @@ body {
     overflow-y: scroll;
     overflow-x: hidden;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    
 } 
 
 header {
@@ -25,6 +27,7 @@ header {
 }
 
 h1 {
+    color:#fff;
     margin-top: -110px;
 }
 
@@ -40,20 +43,87 @@ header::before {
     right: 0;
     top: 0;
     display: block;
-    display: factor;
     background-image: url(../../media/relaxTree.jpg);
-    background-size: contain;
+    background-size: fill;
     background-repeat: no-repeat;
     transform-origin: center center 0;
     transform: translateZ(-1px) scale(2);
-    z-index: -1;
+    z-index: -2;
     min-height: 100vh;
 }
 
 header * {
+    color: #fff;
     font-weight: normal;
     letter-spacing: 0.2em;
     text-align: center;
     margin: 0;
     padding: 1em 0;
+}
+
+select {
+    color:black;
+
+}
+
+button {
+   border-radius:8px;
+   text-align: center;
+   font-size: 18px;
+   margin-left: 300px;
+   cursor: pointer;
+   text-decoration: none;
+   min-height: 25px;
+   width: 95px;
+   background-color: #fff;
+   color: black;
+    z-index: 1;
+}
+
+button:hover {
+    background: rgb(91, 119, 158);
+    color: #fff;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 2;
+    left: 0;
+    top: 0;
+    height: 30%;
+    width: 30%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0);
+
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+
+.modal-content {
+    background-color: rgb(91, 119, 158);
+    margin: 30% auto;
+    padding: 20px;
+    width: 20%;
+    box-shadow: 0 25px 25px 0 rgba(0, 0, 0, 1), 0, 25px, 25px, 0 rgba(0, 0, 0, 1);
+    animation-name: tony;
+    animation-duration: 1.7s;
+}
+
+
+@keyframes tony{
+    from{
+        transform: translateY(100%);
+    } 
+
+    to {
+        transform: translateY(0%);
+    }
 }
