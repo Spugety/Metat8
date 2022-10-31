@@ -9,6 +9,14 @@ let clicked = null; // whatever day you clicked on
 const weekdaysArray = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 const monthsArray = ["January","February","March","April","May","June","July","August","September","October","November","December"]
 
+function saveTodayEntry() {
+    
+}
+
+function viewDateEntry() {
+
+}
+
 function renderCalendar() {
     let date = new Date();
 
@@ -51,7 +59,7 @@ function renderCalendar() {
             daySlot.innerText = i - disabledDays;
             // add button click listener
             daySlot.addEventListener("click", () => {
-                console.log("click");
+                //insertcodeherelmaoasdhfjahsuehjaskdhfj
             });
         } else {
             daySlot.classList.add("disabled");
@@ -66,13 +74,11 @@ function renderCalendar() {
 
 function buttonFunction() {
     backBtn.addEventListener("click", () => {
-        console.log("clicked");
         monthInc--;
         renderCalendar();
     });
 
     nextBtn.addEventListener("click", () => {
-        console.log("clicked");
         monthInc++;
         renderCalendar();
     });
