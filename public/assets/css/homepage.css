@@ -84,3 +84,32 @@ button:hover {
     background: rgb(178, 172, 136);
     color: #fff;
 }
+
+.modal {
+    /* display: none; */
+    position: fixed;
+    z-index: 2;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0);
+
+}
+
+.modal-content {
+    background-color: rgb(178, 172, 136);
+    margin: 30% auto;
+    padding: 20px;
+    width: 70%;
+    box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0), 0, 5px, 20px, 0 rgba(0, 0, 0, 0.17)
+
+}
+
+.cancel {
+    color: #fff;
+    float: right;
+    font-size: 20px;
+
+}
