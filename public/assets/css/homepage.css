@@ -5,7 +5,7 @@ html {
   }
   
 body {
-    color:#fff;
+    color:rgba(255, 255, 255, 0.385);
     margin: 0;
     padding: 0;
     perspective: 1px;
@@ -25,6 +25,7 @@ header {
 }
 
 h1 {
+    color:#fff;
     margin-top: -110px;
 }
 
@@ -51,9 +52,15 @@ header::before {
 }
 
 header * {
+    color: #fff;
     font-weight: normal;
     letter-spacing: 0.2em;
     text-align: center;
     margin: 0;
     padding: 1em 0;
+}
+
+#moods {
+
+    color: black;
 }
