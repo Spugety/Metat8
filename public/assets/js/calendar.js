@@ -3,32 +3,37 @@ const datesClass = document.querySelector(".dates");
 const backBtn = document.querySelector(".arrowLeft");
 const nextBtn = document.querySelector(".arrowRight");
 
-let monthInc = 0; // track which month you're looking at
-let clicked = null; // whatever day you clicked on
-
+// track which month you're looking at
+let monthInc = 0;
 const weekdaysArray = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-const monthsArray = ["January","February","March","April","May","June","July","August","September","October","November","December"]
+const monthsArray = ["January","February","March","April","May","June","July","August","September","October","November","December"];
 
-// save entry information for today
-function saveTodayEntry() {
-    
-}
-
-// opens modal to view entry information on present/past date
-function viewDateEntry() {
-    
-}
+// keeps track of the present date
+// presentDate object
+const presentDate = new Date();
+// turns presentDate to string
+const presentDateToString = presentDate.toLocaleDateString("en-us", {
+    weekday: "long",
+    month: "numeric",
+    day: "numeric",
+    year: "numeric"
+});
 
 // make calendar
 function renderCalendar() {
-    let date = new Date();
-
-    if(monthInc !== 0) { // if month increment counter had been touched before at all
-        date.setMonth(new Date().getMonth() + monthInc); // update date object. date object automatically handles the month/year calculation
+    const date = new Date();
+    
+    // if month increment counter had been touched before at all
+    if(monthInc !== 0) {
+        // set date to the first date, so calculations can be used without worry of skipping months depending on 28,29,30, or 31 days.
+        date.setDate(1);
+        // update date object to add monthInc. date object automatically handles the month/year calculation
+        date.setMonth(new Date().getMonth() + monthInc); 
     }
 
-    let currMonth = date.getMonth(); // gives month number in array index (starts at 0)
-    let currYear = date.getFullYear(); // gives 4 digit year number
+    // uses these variables/values to calc index math stuffs
+    const currMonth = date.getMonth(); // gives month number in array index (starts at 0)
+    const currYear = date.getFullYear(); // gives 4 digit year number
 
     const monthFirstDay = new Date(currYear, currMonth, 1);
     const monthTotalDays = new Date(currYear, currMonth+1, 0).getDate(); // next month first date - 1 = this month last date
@@ -38,7 +43,7 @@ function renderCalendar() {
         weekday: "long",
         month: "numeric",
         day: "numeric",
-        year: "numeric",
+        year: "numeric"
     });
 
     // first splits string into array of 2 halves. [0] is weekday [1] is date
@@ -51,20 +56,45 @@ function renderCalendar() {
 
     // loop for as long as total days in month + disabled days that are part of previous month
     for(let i = 1; i <= disabledDays + monthTotalDays; i++) {
-        // add div tag
+        // add list tag
         const daySlot = document.createElement("li");
-        // each div tag has day class
+        // each list tag has day class
         daySlot.classList.add("day");
 
         // if index is not a disabled date
         if(i > disabledDays) {
             // daySlot text is index - disabledDays: which should be the date
             daySlot.innerText = i - disabledDays;
+
+            // if the text in daySlot = present date and it's the correct month/year
+            if(daySlot.innerText == presentDate.getDate() && (currMonth == presentDate.getMonth() && currYear == presentDate.getFullYear())) {
+                // change color of daySlot
+                daySlot.style.background = "lightsteelblue";
+                // on hover of presentDate, change color of daySlot
+                daySlot.addEventListener("mouseover", () => {
+                    daySlot.style.background = "lightskyblue";
+                });
+                daySlot.addEventListener("mouseout", () => {
+                    daySlot.style.background = "lightsteelblue";
+                });
+            }
+
             // add button click listener for dates
             daySlot.addEventListener("click", () => {
+                // if you click on a daySlot that's been used before
+                if(daySlot.innerText <= presentDate.getDate() && (currMonth <= presentDate.getMonth() && currYear <= presentDate.getFullYear())) {
+                    viewDateEntry();
+                    // pseudocode
+                    // if you click on a daySlot either current or passed
+                    // it'll view the day options on page
+                    // then after you're done selecting stuff
+                    // it'll save into the calendar
+                }
                 //insertcodeherelmaoasdhfjahsuehjaskdhfj
+
             });
         } else {
+            // if index is a disabled date, add disabled class to it
             daySlot.classList.add("disabled");
         }
 
@@ -90,6 +120,11 @@ function buttonFunction() {
         monthInc++;
         renderCalendar();
     });
+}
+
+// opens modal to view entry information on present/past date
+function viewDateEntry() {
+    
 }
 
 //call functions

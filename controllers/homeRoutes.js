@@ -23,7 +23,7 @@ router.get('/', async (req, res) => {
         res.status(500).json(err)
     }
 });
-router.get('/profile', async (req, res) => {
+router.get('/', async (req, res) => {
     try {
         const userData = await User.findByPk(req.session.userId,{
             attributes: { exclude: ['password'] },
@@ -50,7 +50,6 @@ router.get('/dashboard', (req, res) => {
     res.render('entry');
 });
 router.get('/', (req, res) => {
-    
     res.render('all', {layout: 'main'});
 });
 
