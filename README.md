@@ -3,6 +3,17 @@ Mindful meditation exploration
 
 [Visit Our Site](https://metat8.herokuapp.com/)
 
+## Table of Contents 
+
+
+- [Description](#description)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Dependencies](#dependencies)
+- [Contributors](#contributors)
+- [Credits](#credits)
+- [License](#license)
+
 ## Description
 
 Our second major project, Metat8 is your mindful meditation homepage. 
@@ -45,7 +56,18 @@ https://www.w3schools.com/css/css3_flexbox.asp
 https://rapidapi.com/Glavier/api/spotify23/
 https://www.w3schools.com/jsref/jsref_obj_date.asp
 
+## Dependencies
 
+    "bcrypt": "^5.1.0",
+    "connect-session-sequelize": "^7.1.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "express-handlebars": "^6.0.6",
+    "express-session": "^1.17.3",
+    "moment": "^2.29.4",
+    "mysql2": "^2.3.3",
+    "nodemon": "^2.0.20",
+    "sequelize": "^6.25.3"
 
 ## License
 
