@@ -2,7 +2,7 @@
 
 $(document).ready((getEntry) => {
 
-    $('#formData').on('click', function (event) {
+    $('#formData').on('submit', function (event) {
         event.preventDefault();
         getEntry();
         const moodData = {
