@@ -1,3 +1,4 @@
+// fetch call to api for mood spotify playlist
 const options = {
 	method: 'GET',
 	headers: {

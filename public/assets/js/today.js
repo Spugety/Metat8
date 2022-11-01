@@ -1,4 +1,4 @@
-// code for entering affirmation and journal entries
+// code for when mood was selected a playlist would populate
 const moodSelector =document.getElementById("mood")
 moodSelector.addEventListener("change", async (event) => {
     

@@ -1,3 +1,4 @@
+// displays affirmation messages on screen
 const messagePlaceHolder = document.getElementById("messageOfTheDay");
 messagePlaceHolder.innerHTML = getMessageOfTheDay();
 const messageTimer = () => {
