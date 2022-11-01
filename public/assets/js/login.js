@@ -25,9 +25,6 @@ function initMotivate() {
   const userid = document.getElementById("userid").value.trim();
   const passid = document.getElementById("passid").value.trim();
 
-  console.log(userid);
-  console.log(passid);
-
   fetch("/api/user/login", {
     method: "POST",
     body: JSON.stringify({

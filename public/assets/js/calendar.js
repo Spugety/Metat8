@@ -91,7 +91,6 @@ function renderCalendar() {
                     // it'll save into the calendar
                 }
                 //insertcodeherelmaoasdhfjahsuehjaskdhfj
-                console.log("clicked a date");
 
             });
         } else {
