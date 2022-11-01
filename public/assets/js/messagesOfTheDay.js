@@ -11,6 +11,8 @@ const arrayOfMessages = [
   "I am powerful.",
   "I am getting better and better every day.",
   "I wake up motivated.",
+  "Handlebars does not define me.",
+  "Antidisestablishmentarianism",
   "I am a living, breathing example of motivation.",
   "I am living with abundance.",
   "I am having a positive and inpsiring impact on the people I come into contact with.",
