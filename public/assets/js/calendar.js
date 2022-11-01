@@ -4,21 +4,19 @@ const backBtn = document.querySelector(".arrowLeft");
 const nextBtn = document.querySelector(".arrowRight");
 
 let monthInc = 0; // track which month you're looking at
-let clicked = null; // whatever day you clicked on
-
 const weekdaysArray = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-const monthsArray = ["January","February","March","April","May","June","July","August","September","October","November","December"]
+const monthsArray = ["January","February","March","April","May","June","July","August","September","October","November","December"];
 
 // make calendar
 function renderCalendar() {
-    let date = new Date();
+    const date = new Date();
 
     if(monthInc !== 0) { // if month increment counter had been touched before at all
         date.setMonth(new Date().getMonth() + monthInc); // update date object. date object automatically handles the month/year calculation
     }
 
-    let currMonth = date.getMonth(); // gives month number in array index (starts at 0)
-    let currYear = date.getFullYear(); // gives 4 digit year number
+    const currMonth = date.getMonth(); // gives month number in array index (starts at 0)
+    const currYear = date.getFullYear(); // gives 4 digit year number
 
     const monthFirstDay = new Date(currYear, currMonth, 1);
     const monthTotalDays = new Date(currYear, currMonth+1, 0).getDate(); // next month first date - 1 = this month last date
@@ -28,7 +26,7 @@ function renderCalendar() {
         weekday: "long",
         month: "numeric",
         day: "numeric",
-        year: "numeric",
+        year: "numeric"
     });
 
     // first splits string into array of 2 halves. [0] is weekday [1] is date
@@ -41,9 +39,9 @@ function renderCalendar() {
 
     // loop for as long as total days in month + disabled days that are part of previous month
     for(let i = 1; i <= disabledDays + monthTotalDays; i++) {
-        // add div tag
+        // add list tag
         const daySlot = document.createElement("li");
-        // each div tag has day class
+        // each list tag has day class
         daySlot.classList.add("day");
 
         // if index is not a disabled date
@@ -53,8 +51,10 @@ function renderCalendar() {
             // add button click listener for dates
             daySlot.addEventListener("click", () => {
                 //insertcodeherelmaoasdhfjahsuehjaskdhfj
+                console.log("clicked a date");
             });
         } else {
+            // if index is a disabled date, add disabled class to it
             daySlot.classList.add("disabled");
         }
 
@@ -69,7 +69,6 @@ function renderCalendar() {
 function buttonFunction() {
     // when you click button
     backBtn.addEventListener("click", () => {
-        console.log("clicked");
         // decrement monthInc
         monthInc--;
         // call to make calendar again
@@ -78,7 +77,6 @@ function buttonFunction() {
     });
 
     nextBtn.addEventListener("click", () => {
-        console.log("clicked");
         monthInc++;
         renderCalendar();
     });
