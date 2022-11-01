@@ -1,4 +1,4 @@
-/* html {
+html {
     height: 100%;
     overflow: hidden;
 
@@ -44,12 +44,12 @@ header::before {
     top: 0;
     display: block;
     background-image: url(../../media/relaxTree.jpg);
-    background-size: fill;
+    background-size:cover;
     background-repeat: no-repeat;
     transform-origin: center center 0;
     transform: translateZ(-1px) scale(2);
     z-index: -2;
-    min-height: 100vh;
+    min-height: 100vw;
 }
 
 header * {
@@ -70,7 +70,7 @@ button {
    border-radius:8px;
    text-align: center;
    font-size: 18px;
-   margin-left: 300px;
+   margin-left: 0;
    cursor: pointer;
    text-decoration: none;
    min-height: 25px;
@@ -88,31 +88,36 @@ button:hover {
 .modal {
     display: none;
     position: fixed;
-    z-index: 2;
-    left: 0;
-    top: 0;
+    margin-top: 400px;
+    z-index: 6;
     height: 30%;
-    width: 30%;
+    width: 100%;
     overflow: auto;
     background-color: rgba(0, 0, 0, 0);
 
 }
 
+#loginForm {
+    display: block;
+    align-content: center;
+}
+
 .container {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     flex-direction: column;
-    align-items: center;
+    text-align: center;
+    z-index: 3;
 
 }
 
-
 .modal-content {
+    display: flex;
+    justify-content:space-around;
     background-color: rgb(91, 119, 158);
-    margin: 30% auto;
-    padding: 20px;
+    margin: auto;
     width: 20%;
-    box-shadow: 0 25px 25px 0 rgba(0, 0, 0, 1), 0, 25px, 25px, 0 rgba(0, 0, 0, 1);
     animation-name: tony;
     animation-duration: 1.7s;
 }
@@ -126,4 +131,4 @@ button:hover {
     to {
         transform: translateY(0%);
     }
-} */
+}
