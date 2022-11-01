@@ -1,4 +1,4 @@
-
+// the array of affirmation messages 
 const getMessageOfTheDay = () => {
     return arrayOfMessages[getRandomInt(arrayOfMessages.length)]
 };
